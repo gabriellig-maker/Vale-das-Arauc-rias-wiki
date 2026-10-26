@@ -27,13 +27,7 @@ Todos os arquivos ficam na raiz do repositório.
 
 ## Publicar no GitHub Pages
 
-1. Crie um repositório (por exemplo, `ValeDasAraucariasWiki`) e envie **todos** os arquivos para a raiz.
-2. No repositório, abra **Settings → Pages**.
-3. Em *Build and deployment*, escolha **Deploy from a branch**, a branch `main` e a pasta `/ (root)`. Salve.
-4. Depois de alguns minutos, o site fica em `https://SEU-USUARIO.github.io/NOME-DO-REPOSITORIO/`.
-5. Configure a pesquisa (próxima seção).
 
-Para testar no computador, basta abrir `index.html` no navegador.
 
 ## Configurar a pesquisa
 
