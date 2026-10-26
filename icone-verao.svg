@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" role="img" aria-labelledby="t">
+  <title id="t">Verão</title>
+  <g stroke="#d9861c" stroke-width="2">
+    <path d="M8 0.5 V3 M8 13 V15.5 M0.5 8 H3 M13 8 H15.5 M2.7 2.7 L4.4 4.4 M11.6 11.6 L13.3 13.3 M13.3 2.7 L11.6 4.4 M4.4 11.6 L2.7 13.3"/>
+  </g>
+  <circle cx="8" cy="8" r="4.2" fill="#ffd23f" stroke="#d9861c" stroke-width="1"/>
+</svg>

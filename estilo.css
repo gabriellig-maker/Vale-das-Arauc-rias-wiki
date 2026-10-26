@@ -1,0 +1,617 @@
+/* =========================================================
+   Vale das Araucárias Wiki — folha de estilo única
+   Layout no estilo da Stardew Valley Wiki (MediaWiki, skin Vector):
+   céu noturno ao fundo, conteúdo azul-claro translúcido, menu e
+   caixa de informações com moldura de madeira e cabeçalhos verdes.
+   ========================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+:root {
+  color-scheme: light;
+  --noite: #0a0523;
+  --painel: rgba(209, 248, 255, 0.85);
+  --painel-solido: #b9dbe6;
+  --painel-borda: #a7d7f9;
+  --celula: rgba(255, 255, 255, 0.58);
+  --celula-borda: #8dcaf0;
+  --azul-borda: #84aeec;
+  --categoria: rgba(199, 242, 254, 0.53);
+  --verde: #027e05;
+  --verde-borda: #007448;
+  --verde-sombra: #00321f;
+  --texto: #202122;
+  --texto-suave: #3a3f45;
+  --cinza-linha: #a2a9b1;
+  --link: #0645ad;
+  --link-visitado: #0b0080;
+  --link-novo: #a40000;
+  --aba: #b7d2ff;
+  --aba-ativa: #c6dbff;
+  --rodape: rgba(0, 0, 0, 0.8);
+  --rodape-texto: #c2c8cf;
+  --dourado: #f2c14e;
+  --foco: #ffb000;
+  --titulo: "Open Sans", "Segoe UI", Arial, sans-serif;
+  --sans: sans-serif;
+  --lateral: 11em;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--texto);
+  background: var(--noite) url("fundo-noite.svg") no-repeat fixed center center / cover;
+}
+
+img { max-width: 100%; height: auto; }
+
+a { color: var(--link); text-decoration: none; }
+a:visited { color: var(--link-visitado); }
+a:hover { text-decoration: underline; }
+:focus-visible { outline: 3px solid var(--foco); outline-offset: 2px; }
+
+.pixel { image-rendering: pixelated; image-rendering: crisp-edges; }
+
+.moldura {
+  border: 12px solid transparent;
+  border-image: url("moldura.svg") 15 stretch;
+}
+
+/* ---------- acessibilidade ---------- */
+.pular {
+  position: absolute;
+  left: -999px;
+  top: 0.5rem;
+  z-index: 100;
+  padding: 0.5rem 0.8rem;
+  background: #fff;
+  border: 2px solid var(--texto);
+}
+.pular:focus { left: 0.5rem; }
+
+.visualmente-oculto {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---------- cabeçalho: logotipo e abas sobre o céu ---------- */
+.topo-site { position: relative; height: 5em; }
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: var(--lateral);
+  height: 160px;
+  display: flex;
+  justify-content: center;
+}
+.logo img { display: block; width: 160px; height: 160px; }
+
+.nome-movel, .menu-movel { display: none; }
+
+.abas {
+  position: absolute;
+  left: var(--lateral);
+  right: 15px;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 0.8125rem;
+}
+.abas ul { display: flex; gap: 0.2rem; list-style: none; margin: 0; padding: 0; }
+.abas li a { display: block; padding: 0.55rem 0.7rem 0.45rem; }
+.abas li a, .abas li a:visited { color: var(--aba); }
+.abas li.ativa a, .abas li.ativa a:visited { color: var(--aba-ativa); font-weight: bold; }
+
+/* ---------- corpo: menu lateral e conteúdo ---------- */
+.corpo {
+  display: grid;
+  grid-template-columns: var(--lateral) minmax(0, 1fr);
+  align-items: start;
+}
+
+.conteudo {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  min-height: 500px;
+  margin: 0 15px 0 0;
+  padding: 1.25em 1.5em 1.5em;
+  background-color: var(--painel);
+  border: 1px solid var(--painel-borda);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.lateral {
+  grid-column: 1;
+  grid-row: 1;
+  position: relative;
+  left: -6px;
+  margin-top: 6em;
+  padding: 0.3em 0.5em 15px 0.9em;
+  background-color: var(--painel);
+  border: 6px solid transparent;
+  border-image: url("moldura.svg") 15 stretch;
+  border-radius: 0 8px 8px 0;
+  font-size: 0.75rem;
+}
+
+.portlet { margin: 0 0 0.6em; }
+.portlet h2 {
+  margin: 0.6em 0 0.2em;
+  padding: 0.2em 0;
+  font-family: var(--sans);
+  font-size: 1em;
+  font-weight: normal;
+  color: var(--texto-suave);
+  border-bottom: 1px solid var(--cinza-linha);
+}
+.portlet ul { list-style: none; margin: 0; padding: 0.2em 0 0; }
+.portlet li { padding: 0.25em 0; line-height: 1.125em; }
+.portlet a[aria-current="page"] { font-weight: bold; color: var(--texto); }
+
+/* ---------- rodapé ---------- */
+.rodape {
+  margin-top: 20px;
+  padding: 1.1em 15px 1.4em calc(var(--lateral) + 1.5em);
+  background: var(--rodape);
+  color: var(--rodape-texto);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+.rodape p { margin: 0.25em 0; }
+.rodape ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.3em 1.2em; padding: 0; margin: 0.6em 0 0; }
+.rodape a, .rodape a:visited { color: #fff; }
+
+.botao-topo {
+  position: fixed;
+  right: calc(1rem + env(safe-area-inset-right, 0px));
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  z-index: 50;
+  padding: 0.15rem 0.45rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+  background: var(--painel-solido);
+  border: 6px solid transparent;
+  border-image: url("moldura.svg") 15 stretch;
+}
+.botao-topo, .botao-topo:visited { color: var(--texto); }
+.botao-topo:hover { background: #d6eef5; text-decoration: none; }
+
+/* ---------- títulos e texto ---------- */
+.titulo-pagina {
+  margin: 0 0 0.25em;
+  padding: 0;
+  font-family: var(--titulo);
+  font-size: 1.8em;
+  font-weight: normal;
+  line-height: 1.3;
+  border-bottom: 1px solid var(--cinza-linha);
+}
+.subtitulo-pagina { margin: 0 0 1.1em; font-size: 0.92em; color: var(--texto-suave); }
+
+.conteudo h2 {
+  margin: 1em 0 0.25em;
+  padding: 0;
+  font-family: var(--titulo);
+  font-size: 1.5em;
+  font-weight: normal;
+  line-height: 1.3;
+  border-bottom: 1px solid var(--cinza-linha);
+}
+.conteudo h3 { margin: 0.9em 0 0.3em; font-size: 1.2em; font-weight: bold; line-height: 1.6; }
+.conteudo h4 { margin: 0.8em 0 0.3em; font-size: 1em; }
+.conteudo p { margin: 0.4em 0 0.5em; }
+.conteudo ul, .conteudo ol { margin: 0.3em 0 0.6em 1.6em; padding: 0; }
+.conteudo li { margin-bottom: 0.1em; }
+.conteudo code, .conteudo kbd {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.9em;
+  background: #f8f9fa;
+  border: 1px solid #eaecf0;
+  border-radius: 2px;
+  padding: 1px 4px;
+  overflow-wrap: anywhere;
+}
+
+blockquote.descricao-jogo {
+  margin: 0.5em 0 0.9em;
+  padding: 0.5em 0.9em;
+  background: var(--celula);
+  border-left: 4px solid var(--verde);
+  font-style: italic;
+}
+
+.nota { font-size: 0.86em; color: var(--texto-suave); }
+
+.voltar-topo { margin-top: 1.4em; font-size: 0.86em; text-align: right; }
+
+.link-novo { color: var(--link-novo); cursor: help; border-bottom: 1px dotted var(--link-novo); }
+
+/* ---------- avisos (estilo ambox) ---------- */
+.aviso {
+  margin: 0.5em 0 1em;
+  padding: 0.45em 0.8em;
+  background: var(--celula);
+  border: 1px solid var(--cinza-linha);
+  border-left: 10px solid #3366cc;
+}
+.aviso p { margin: 0.1em 0; }
+.aviso-info { border-left-color: #3366cc; }
+.aviso-planejado { border-left-color: #f28500; }
+.aviso-implementado { border-left-color: #14866d; }
+.aviso-removido { border-left-color: #b32424; }
+
+.status {
+  display: inline-block;
+  padding: 0 0.4em;
+  font-size: 0.86em;
+  font-weight: bold;
+  white-space: nowrap;
+  border: 1px solid;
+  border-radius: 3px;
+}
+.status-implementado { color: #0c5d4b; background: #d5fdf4; border-color: #14866d; }
+.status-planejado { color: #7a4100; background: #fef6e7; border-color: #f28500; }
+.status-nao-confirmado { color: #3a3f45; background: #f1f2f3; border-color: #a2a9b1; }
+.status-removido { color: #8b1a1a; background: #fee7e6; border-color: #b32424; }
+
+/* ---------- caixa de informações (infobox) ---------- */
+.infobox {
+  float: right;
+  clear: right;
+  width: 330px;
+  max-width: 100%;
+  margin: 0 0 15px 15px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 12px solid transparent;
+  border-image: url("moldura.svg") 15 stretch;
+  border-radius: 12px;
+  font-size: 0.93em;
+  line-height: 1.45;
+}
+.infobox table { width: 100%; table-layout: fixed; border-collapse: separate; border-spacing: 0 2px; }
+.infobox caption {
+  padding: 5px 0;
+  text-align: center;
+  font-size: 24px;
+  line-height: 1.25;
+  text-shadow: 0 1.5px 0 rgba(0, 0, 0, 0.2);
+}
+.infobox th, .infobox td { vertical-align: top; text-align: left; overflow-wrap: anywhere; }
+.infobox th[scope="row"] {
+  width: 105px;
+  padding: 2px 5px 2px 15px;
+  font-weight: normal;
+  color: #fff;
+  background-color: var(--verde);
+  border: 1px solid var(--verde-borda);
+  box-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px var(--verde-sombra);
+}
+.infobox th[scope="row"] a { color: #fff; }
+.infobox td { padding: 2px 12px 2px 6px; }
+.infobox .infobox-imagem { padding: 6px 0; text-align: center; }
+.infobox .infobox-imagem img { display: inline-block; vertical-align: bottom; }
+.infobox .infobox-descricao { padding: 0 6px 6px; text-align: center; font-style: italic; }
+.infobox .infobox-secao {
+  padding: 3px 6px;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--verde);
+  border: 1px solid var(--verde-borda);
+  box-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px var(--verde-sombra);
+}
+.infobox code { word-break: break-all; }
+.infobox ul { margin: 0; padding: 0; list-style: none; }
+
+.lista-precos { display: flex; flex-wrap: wrap; gap: 0.1em 0.7em; }
+.lista-precos li { white-space: nowrap; }
+
+.icone { width: 16px; height: 16px; vertical-align: -3px; }
+.estacao { white-space: nowrap; }
+.estacao img { margin-right: 0.15em; }
+
+/* ---------- sumário (TOC) ---------- */
+.toc {
+  display: inline-block;
+  min-width: 13em;
+  margin: 0.4em 0 0.8em;
+  padding: 7px 10px;
+  background-color: var(--celula);
+  border: 1px solid var(--cinza-linha);
+  font-size: 0.95em;
+}
+.toc summary { cursor: pointer; font-weight: bold; text-align: center; }
+.toc ol { list-style: none; margin: 0.3em 0 0; padding: 0; }
+.toc ol ol { margin: 0 0 0 2em; }
+.toc li { margin: 0.1em 0; line-height: 1.3; }
+.toc .tocnumero { color: var(--texto); padding-right: 0.5em; }
+
+/* ---------- tabelas (estilo wikitable da Stardew Valley Wiki) ---------- */
+.tabela-rolagem { overflow-x: auto; margin: 0.6em 0 1em; max-width: 100%; }
+.tabela {
+  border-collapse: separate;
+  border-spacing: 2px;
+  background-color: transparent;
+  border: none;
+  font-size: 0.95em;
+  line-height: 1.4;
+}
+.tabela caption { padding: 0.2em; font-weight: bold; text-align: left; }
+.tabela th, .tabela td {
+  padding: 0.2em 0.45em;
+  border: 1px solid var(--celula-borda);
+  background-color: var(--celula);
+  vertical-align: middle;
+}
+.tabela th {
+  text-align: center;
+  color: #fff;
+  background-color: var(--verde);
+  border-color: var(--verde-borda);
+  box-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px var(--verde-sombra);
+}
+.tabela th a, .tabela th a:visited { color: #fff; }
+.tabela tbody th[scope="row"] { text-align: left; }
+.tabela .centro { text-align: center; }
+.tabela .num { text-align: right; white-space: nowrap; }
+.tabela-larga { width: 100%; }
+
+/* ---------- galerias (estágios, estações) ---------- */
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.5em;
+  list-style: none;
+  margin: 0.4em 0 1em !important;
+  padding: 0;
+}
+.galeria li { margin: 0; }
+.galeria figure {
+  margin: 0;
+  padding: 0.4em 0.5em 0.3em;
+  min-width: 5.2em;
+  text-align: center;
+  background: var(--celula);
+  border: 1px solid var(--celula-borda);
+}
+.galeria figure img { display: block; margin: 0 auto 0.25em; }
+.galeria figcaption { font-size: 0.86em; line-height: 1.3; }
+
+/* ---------- caixa de navegação (navbox) ---------- */
+.navbox {
+  clear: both;
+  width: 80%;
+  margin: 15px auto 0;
+  padding: 5px;
+  border: 1px solid var(--azul-borda);
+  border-radius: 11px;
+}
+.navbox table { width: 100%; border-collapse: separate; border-spacing: 2px; font-size: 0.9em; }
+.navbox th, .navbox td { padding: 0.2em 0.6em; }
+.navbox .navbox-titulo, .navbox th[scope="row"] {
+  color: #fff;
+  background-color: var(--verde);
+  border: 1px solid var(--verde-borda);
+  box-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px var(--verde-sombra);
+}
+.navbox .navbox-titulo { text-align: center; font-size: 1.1em; }
+.navbox th[scope="row"] { width: 10em; text-align: right; font-weight: normal; }
+.navbox th a, .navbox th a:visited { color: #fff; }
+.navbox td { background-color: var(--celula); border: 1px solid var(--celula-borda); }
+.navbox ul { list-style: none; margin: 0; padding: 0; display: inline; }
+.navbox li { display: inline; margin: 0; }
+.navbox li + li::before { content: " • "; font-weight: bold; }
+
+/* ---------- categorias ---------- */
+.categorias {
+  clear: both;
+  margin-top: 1.2em;
+  padding: 5px 8px;
+  background-color: var(--categoria);
+  border: 1px solid var(--azul-borda);
+  font-size: 0.93em;
+}
+.categorias ul { display: inline; list-style: none; margin: 0; padding: 0; }
+.categorias li { display: inline; margin: 0; }
+.categorias li + li { border-left: 1px solid var(--cinza-linha); margin-left: 0.25em; padding-left: 0.4em; }
+
+/* ---------- página principal ---------- */
+.banner-principal {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 36rem) 1fr;
+  align-items: end;
+  gap: 1rem;
+  margin: 0 0 0.4em;
+}
+.banner-lado { display: flex; justify-content: center; align-items: flex-end; gap: 0.6rem; min-height: 1px; }
+.banner-meio img { display: block; width: 100%; height: auto; }
+.boas-vindas { text-align: center; margin: 0 0 1em; }
+.boas-vindas .titulo-principal {
+  margin: 0 0 0.2em;
+  font-family: var(--titulo);
+  font-size: 1.9em;
+  font-weight: normal;
+  line-height: 1.25;
+  border: 0;
+}
+.boas-vindas p { margin: 0.2em 0; }
+
+.menu-principal {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.6rem 1.5rem;
+  margin: 0 0 1.2em;
+  padding: 0.6em 1em 0.8em;
+  background: rgba(255, 255, 255, 0.6);
+  border: 12px solid transparent;
+  border-image: url("moldura.svg") 15 stretch;
+  border-radius: 12px;
+}
+.menu-principal h2 { margin: 0.2em 0 0.3em !important; font-size: 1.25em !important; }
+.menu-principal ul { list-style: none; margin: 0 !important; padding: 0; }
+.menu-principal li { margin: 0 0 0.25em; }
+.menu-principal a { display: flex; align-items: center; gap: 0.5em; padding: 0.15em 0; }
+.menu-principal img { width: 32px; height: 32px; object-fit: contain; flex: none; }
+
+.grade-principal { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.caixa { padding: 5px; border: 1px solid var(--azul-borda); border-radius: 11px; }
+.caixa-larga { grid-column: 1 / -1; }
+.caixa > h2 {
+  margin: 0 0 2px !important;
+  padding: 0.15em 0.5em;
+  font-size: 1.15em !important;
+  text-align: center;
+  color: #fff;
+  background-color: var(--verde);
+  border: 1px solid var(--verde-borda) !important;
+  box-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px var(--verde-sombra);
+}
+.caixa-corpo { padding: 0.4em 0.8em 0.6em; background: var(--celula); border: 1px solid var(--celula-borda); }
+.selos { display: flex; flex-wrap: wrap; gap: 0.4em; list-style: none; margin: 0.4em 0 0.2em !important; padding: 0; }
+.selos li {
+  margin: 0;
+  padding: 0.15em 0.6em;
+  font-weight: bold;
+  background: var(--painel-solido);
+  border: 6px solid transparent;
+  border-image: url("moldura.svg") 15 stretch;
+}
+
+/* ---------- índice alfabético ---------- */
+.barra-letras { display: flex; flex-wrap: wrap; gap: 0.25em; list-style: none; margin: 0.5em 0 1em !important; padding: 0; }
+.barra-letras li { margin: 0; }
+.barra-letras a, .barra-letras span {
+  display: inline-block;
+  min-width: 2em;
+  padding: 0.15em 0.4em;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid var(--verde-borda);
+  background: var(--verde);
+  text-shadow: 0 2px var(--verde-sombra);
+}
+.barra-letras a, .barra-letras a:visited { color: #fff; }
+.barra-letras span { color: #5b6470; background: var(--celula); border-color: var(--celula-borda); text-shadow: none; font-weight: normal; }
+.colunas { columns: 3 14em; column-gap: 1.6em; }
+.colunas ul { margin-top: 0; }
+.colunas li { break-inside: avoid; }
+
+/* ---------- calendário ---------- */
+.calendario { font-size: 0.85em; }
+.calendario th, .calendario td { padding: 0.1em 0.2em; min-width: 1.6em; text-align: center; }
+.calendario tbody th[scope="row"] { min-width: 9em; white-space: nowrap; }
+.calendario td.plantio { background: #cdeec4; }
+.calendario td.colheita { background: var(--dourado); font-weight: bold; }
+.calendario td.rebrota { background: #f8dc8c; }
+.legenda { display: flex; flex-wrap: wrap; gap: 0.4em 1em; list-style: none; margin: 0.3em 0 0.8em !important; padding: 0; font-size: 0.93em; }
+.legenda li { margin: 0; }
+.legenda span { display: inline-block; width: 1em; height: 1em; margin-right: 0.3em; vertical-align: -2px; border: 1px solid var(--celula-borda); }
+.legenda .cor-plantio { background: #cdeec4; }
+.legenda .cor-colheita { background: var(--dourado); }
+.legenda .cor-rebrota { background: #f8dc8c; }
+
+/* ---------- busca ---------- */
+.form-busca { display: flex; flex-wrap: wrap; gap: 0.5em; align-items: center; margin: 0.6em 0 1em; }
+.form-busca input[type="search"] {
+  flex: 1 1 16em;
+  padding: 0.4em 0.6em;
+  font-size: 1rem;
+  border: 1px solid var(--cinza-linha);
+  border-radius: 2px;
+  background: #fff;
+}
+.form-busca button {
+  padding: 0.4em 1em;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #fff;
+  background: var(--verde);
+  border: 1px solid var(--verde-borda);
+  text-shadow: 0 2px var(--verde-sombra);
+  cursor: pointer;
+}
+
+/* ---------- telas médias ---------- */
+@media (max-width: 1150px) {
+  .banner-lado { display: none; }
+  .banner-principal { grid-template-columns: minmax(0, 32rem); justify-content: center; }
+  .menu-principal { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* ---------- celular ---------- */
+@media (max-width: 760px) {
+  .topo-site {
+    height: auto;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 1rem 0;
+  }
+  .logo { position: static; width: auto; height: auto; }
+  .logo img { width: 64px; height: 64px; }
+  .nome-movel { display: block; margin: 0; font-family: var(--titulo); font-size: 1.05rem; font-weight: bold; line-height: 1.2; }
+  .nome-movel a, .nome-movel a:visited { color: #fff; }
+  .menu-movel {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 0.15rem 0.45rem;
+    font-size: 0.85rem;
+    font-weight: bold;
+    background: var(--painel-solido);
+    border: 6px solid transparent;
+    border-image: url("moldura.svg") 15 stretch;
+  }
+  .menu-movel, .menu-movel:visited { color: var(--texto); }
+  .abas { position: static; grid-column: 1 / -1; }
+  .corpo { grid-template-columns: minmax(0, 1fr); padding: 0 1rem; }
+  .conteudo { grid-column: 1; margin: 0; padding: 0.9em 0.9em 1.2em; font-size: 0.95rem; }
+  .lateral {
+    grid-column: 1;
+    grid-row: 2;
+    left: 0;
+    margin-top: 1rem;
+    border-radius: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+    gap: 0 0.8rem;
+    font-size: 0.85rem;
+  }
+  .rodape { padding: 1em 1rem 3.5em; }
+  .infobox { float: none; width: auto; margin: 0 0 1em; }
+  .grade-principal, .menu-principal { grid-template-columns: minmax(0, 1fr); }
+  .titulo-pagina { font-size: 1.55em; }
+  .navbox { width: 100%; }
+  .navbox th[scope="row"] { width: auto; text-align: left; }
+  .navbox th[scope="row"], .navbox td { display: block; }
+}
+
+@media print {
+  body { background: #fff; }
+  .lateral, .abas, .botao-topo, .menu-movel, .logo { display: none; }
+  .topo-site { height: auto; }
+  .corpo { display: block; }
+  .conteudo { border: 0; margin: 0; padding: 0; background: #fff; }
+  .rodape { background: none; color: #333; padding-left: 0; }
+}
