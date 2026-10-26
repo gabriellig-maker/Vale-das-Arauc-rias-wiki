@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Instalação e requisitos – Vale das Araucárias Wiki</title>
+  <meta name="description" content="Como instalar o mod Vale das Araucárias: requisitos, passo a passo, saves e comandos de teste.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body id="topo">
+  <a class="pular" href="#conteudo">Ir para o conteúdo</a>
+  <header class="topo-site">
+    <a class="logo" href="index.html"><img src="logo.svg" width="160" height="160" alt="Vale das Araucárias Wiki – página principal"></a>
+    <p class="nome-movel"><a href="index.html">Vale das Araucárias Wiki</a></p>
+    <a class="menu-movel" href="#navegacao">☰ Menu</a>
+    <nav class="abas" aria-label="Página">
+      <ul>
+        <li class="ativa"><a href="instalacao.html" aria-current="page">Artigo</a></li>
+      </ul>
+      <ul>
+        <li><a href="indice.html">Índice A–Z</a></li>
+        <li><a href="busca.html">Pesquisar</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="corpo">
+    <main id="conteudo" class="conteudo">
+      <h1 class="titulo-pagina">Instalação e requisitos</h1>
+      <p class="subtitulo-pagina">Da Vale das Araucárias Wiki</p>
+      <div class="aviso aviso-info" role="note">
+        <div>
+          <p>Versão 1.8.1. Requisitos: <b>Stardew Valley 1.6+</b>, <b>SMAPI 4.0+</b> e <b>Content Patcher 2.0+</b>. As dependências não vêm dentro do ZIP do mod.</p>
+        </div>
+      </div>
+      <details class="toc" open>
+        <summary>Conteúdo</summary>
+        <ol>
+          <li><a href="#requisitos"><span class="tocnumero">1</span><span class="toctexto">Requisitos</span></a></li>
+          <li><a href="#instalar"><span class="tocnumero">2</span><span class="toctexto">Instalação</span></a></li>
+          <li><a href="#atualizar"><span class="tocnumero">3</span><span class="toctexto">Atualizar de versões anteriores</span></a></li>
+          <li><a href="#saves"><span class="tocnumero">4</span><span class="toctexto">Saves</span></a></li>
+          <li><a href="#conferir"><span class="tocnumero">5</span><span class="toctexto">Conferir no jogo</span></a></li>
+          <li><a href="#comandos"><span class="tocnumero">6</span><span class="toctexto">Comandos de teste</span></a></li>
+          <li><a href="#testes"><span class="tocnumero">7</span><span class="toctexto">Situação dos testes</span></a></li>
+        </ol>
+      </details>
+      <h2 id="requisitos">Requisitos</h2>
+      <div class="tabela-rolagem" role="region" tabindex="0" aria-label="Requisitos">
+        <table class="tabela">
+          <caption>Requisitos</caption>
+          <thead>
+            <tr><th scope="col">Requisito</th><th scope="col">Versão mínima</th><th scope="col">Onde obter</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Stardew Valley</th><td class="centro">1.6</td><td>—</td></tr>
+            <tr><th scope="row">SMAPI</th><td class="centro">4.0</td><td><a href="https://smapi.io" rel="noopener">smapi.io</a></td></tr>
+            <tr><th scope="row">Content Patcher</th><td class="centro">2.0</td><td><a href="https://www.nexusmods.com/stardewvalley/mods/1915" rel="noopener">Nexus Mods</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Os arquivos do mod não informam um link público de download do Vale das Araucárias.</p>
+      <h2 id="instalar">Instalação</h2>
+      <ol>
+        <li>Feche o jogo e guarde uma cópia do mod anterior fora da pasta <code>Mods</code>.</li>
+        <li>Extraia o ZIP. O SMAPI não carrega o ZIP fechado.</li>
+        <li>Coloque a pasta <code>varas_lend1_lend2_covos_mercado</code> dentro de <code>Mods</code>.</li>
+        <li>Mantenha só uma cópia desse pack em <code>Mods</code>. Não instale outra pasta com o mesmo UniqueID nem o complemento de árvores separado.</li>
+        <li>Abra o jogo pelo SMAPI, com o Content Patcher instalado.</li>
+      </ol>
+      <p>O caminho final deve ficar assim: <code>Stardew Valley/Mods/varas_lend1_lend2_covos_mercado/manifest.json</code>.</p>
+      <div class="tabela-rolagem" role="region" tabindex="0" aria-label="Onde fica a pasta do jogo (instalação padrão)">
+        <table class="tabela">
+          <caption>Onde fica a pasta do jogo (instalação padrão)</caption>
+          <thead>
+            <tr><th scope="col">Instalação</th><th scope="col">Pasta do jogo</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Steam no Windows</th><td><code>C:\Program Files (x86)\Steam\steamapps\common\Stardew Valley</code></td></tr>
+            <tr><th scope="row">GOG no Windows</th><td><code>C:\Program Files (x86)\GOG Galaxy\Games\Stardew Valley</code></td></tr>
+            <tr><th scope="row">Linux (Steam)</th><td><code>~/.local/share/Steam/steamapps/common/Stardew Valley</code></td></tr>
+            <tr><th scope="row">macOS (Steam)</th><td><code>~/Library/Application Support/Steam/steamapps/common/Stardew Valley/Contents/MacOS</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 id="atualizar">Atualizar de versões anteriores</h2>
+      <p>Este pack já contém os mods abaixo. Se algum deles estiver em <code>Mods</code>, retire-o antes de instalar, para não aplicar as mesmas mudanças duas vezes:</p>
+      <ul class="colunas">
+        <li><code>PeixesDoSul</code></li>
+        <li><code>PeixesLendariosRenomeados</code></li>
+        <li><code>peixevaras_peixeslendarios</code></li>
+        <li><code>ValeDasAraucarias_CovoLendariosMercado</code></li>
+        <li><code>goby_geleias</code></li>
+        <li><code>vale_das_araucarias_receitas</code></li>
+        <li><code>ValeDasAraucarias_CultivosCulinaria</code></li>
+      </ul>
+      <h2 id="saves">Saves</h2>
+      <ul>
+        <li>Não é preciso criar um save novo. Faça backup e teste primeiro em uma cópia do save.</li>
+        <li><b>Vindo de versões anteriores à 1.6.0:</b> venda, use ou tire do save os cultivos, ingredientes e pratos antigos antes de atualizar; sem as definições, eles viram <i>Error Item</i> e as plantações param de funcionar.</li>
+        <li><b>Vindo de versões anteriores à 1.7.0:</b> mudas, bergamotas, pitangas e árvores frutíferas plantadas viram <i>Error Item</i> ou deixam de funcionar.</li>
+        <li>Os seis cultivos antigos (feijão-preto, mandioca, batata-doce, cebola, maracujá e pimentão) voltaram na 1.8.0 com os mesmos IDs da versão 1.5.0.</li>
+      </ul>
+      <h2 id="conferir">Conferir no jogo</h2>
+      <p>No console do SMAPI, digite:</p>
+      <ul>
+        <li><code>patch summary "belfortkafag.varas_lend1_lend2_covos_mercado"</code> — os patches devem aparecer aplicados e sem erro.</li>
+        <li><code>list_items ValeDasAraucarias</code> — lista os itens novos.</li>
+      </ul>
+      <h2 id="comandos">Comandos de teste</h2>
+      <p>Comandos do arquivo <code>COMANDOS_TESTE.txt</code> do mod. Use em uma cópia do save.</p>
+      <ul>
+        <li><code>player_add (O)ValeDasAraucarias.Arvores_Pinhao 10</code></li>
+        <li><code>player_add (O)ValeDasAraucarias.Arvores_FolhasErvaMate 10</code></li>
+        <li><code>player_add (O)ValeDasAraucarias.Cultivos_SementesCevada 20</code></li>
+        <li><code>player_add (O)ValeDasAraucarias.Processados_FarinhaDeMilho 5</code></li>
+        <li><code>debug action &quot;MarkCookingRecipeKnown Current ValeDasAraucarias.Culinaria_BroaDeMilho&quot;</code></li>
+        <li><code>world_setseason winter</code></li>
+        <li><code>patch export Data/Crops</code></li>
+      </ul>
+      <p class="nota">Formato: <code>player_add &lt;ID qualificado&gt; [quantidade] [qualidade: 0 normal, 1 prata, 2 ouro, 4 irídio]</code>. Os IDs de todos os itens estão nas caixas de informações de cada artigo.</p>
+      <h2 id="testes">Situação dos testes</h2>
+      <div class="tabela-rolagem" role="region" tabindex="0" aria-label="Validação registrada nos arquivos do mod">
+        <table class="tabela">
+          <caption>Validação registrada nos arquivos do mod</caption>
+          <thead>
+            <tr><th scope="col">Verificação</th><th scope="col">Resultado</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Checagem estática da 1.8.1 (JSON, caminhos, sprites e dados)</th><td>Aprovada: 1.365 verificações, 0 erros</td></tr>
+            <tr><th scope="row">Execução do Stardew Valley/SMAPI</th><td>Não executada pelo autor do pacote</td></tr>
+            <tr><th scope="row">Crescimento, rebrota, lojas e processamento no jogo</th><td>Pendente (roteiro em ROTEIRO_TESTE_LAVOURAS.txt)</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Se surgir erro, guarde o log do SMAPI (<a href="https://smapi.io/log" rel="noopener">smapi.io/log</a>).</p>
+      <div class="categorias"><a href="indice.html#categorias">Categorias</a>: <ul><li><a href="indice.html#cat-projeto">Projeto</a></li></ul></div>
+      <p class="voltar-topo"><a href="#topo">↑ Voltar ao início do artigo</a></p>
+    </main>
+    <nav id="navegacao" class="lateral" aria-label="Menu principal">
+    <div class="portlet" role="group" aria-labelledby="p-navegacao">
+      <h2 id="p-navegacao" class="visualmente-oculto">Navegação</h2>
+      <ul>
+        <li><a href="index.html">Página principal</a></li>
+        <li><a href="indice.html">Índice A–Z</a></li>
+        <li><a href="busca.html">Pesquisar</a></li>
+        <li><a href="sobre.html">Sobre o mod</a></li>
+      </ul>
+    </div>
+    <div class="portlet" role="group" aria-labelledby="p-pesca">
+      <h2 id="p-pesca">Pesca</h2>
+      <ul>
+        <li><a href="peixes.html">Peixes</a></li>
+        <li><a href="peixes.html#lendarios">Peixes lendários</a></li>
+        <li><a href="peixes.html#covo">Peixes de covo</a></li>
+        <li><a href="peixes.html#mercado-noturno">Mercado Noturno</a></li>
+      </ul>
+    </div>
+    <div class="portlet" role="group" aria-labelledby="p-agricultura">
+      <h2 id="p-agricultura">Agricultura</h2>
+      <ul>
+        <li><a href="lavouras.html">Lavouras</a></li>
+        <li><a href="cultivo.html">Cultivo</a></li>
+        <li><a href="calendario.html">Calendário</a></li>
+        <li><a href="arvores.html">Árvores regionais</a></li>
+      </ul>
+    </div>
+    <div class="portlet" role="group" aria-labelledby="p-culinaria">
+      <h2 id="p-culinaria">Culinária</h2>
+      <ul>
+        <li><a href="receitas.html">Receitas</a></li>
+        <li><a href="conjuntos.html">Conjuntos</a></li>
+      </ul>
+    </div>
+    <div class="portlet" role="group" aria-labelledby="p-mundo">
+      <h2 id="p-mundo">Mundo</h2>
+      <ul>
+        <li><a href="locais.html">Locais e lojas</a></li>
+        <li><a href="aldeoes.html">Aldeões</a></li>
+      </ul>
+    </div>
+    <div class="portlet" role="group" aria-labelledby="p-o-mod">
+      <h2 id="p-o-mod">O mod</h2>
+      <ul>
+        <li><a href="instalacao.html" aria-current="page">Instalação</a></li>
+        <li><a href="atualizacoes.html">Atualizações</a></li>
+        <li><a href="sobre.html#creditos">Créditos</a></li>
+      </ul>
+    </div>
+    </nav>
+  </div>
+  <footer class="rodape">
+    <p>Vale das Araucárias Wiki — documentação do mod <strong>Vale das Araucárias</strong>, versão 1.8.1, de belfortkafag.</p>
+    <p>Mod de fã para Stardew Valley, jogo de ConcernedApe. Esta wiki não é afiliada à ConcernedApe nem à Stardew Valley Wiki oficial.</p>
+    <ul>
+      <li><a href="sobre.html">Sobre o mod</a></li>
+      <li><a href="sobre.html#creditos">Créditos</a></li>
+      <li><a href="instalacao.html">Instalação</a></li>
+      <li><a href="indice.html">Índice A–Z</a></li>
+    </ul>
+  </footer>
+  <a class="botao-topo" href="#topo" aria-label="Voltar ao topo da página">▲ Topo</a>
+</body>
+</html>

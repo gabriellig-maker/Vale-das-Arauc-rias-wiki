@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="t">
+  <title id="t">Imagem provisória de personagem</title>
+  <rect x="1" y="1" width="62" height="62" fill="#f8ecd0" stroke="#b08a5a" stroke-width="2" stroke-dasharray="4 3"/>
+  <rect x="22" y="12" width="20" height="20" fill="#e9c9a0" stroke="#8a6a44" stroke-width="2"/>
+  <rect x="20" y="8" width="24" height="8" fill="#6b3f1f"/>
+  <path d="M12 58 C12 42 20 36 32 36 C44 36 52 42 52 58 Z" fill="#6f9a5a" stroke="#3f5f30" stroke-width="2"/>
+  <rect x="27" y="20" width="3" height="3" fill="#3a2a1a"/>
+  <rect x="34" y="20" width="3" height="3" fill="#3a2a1a"/>
+</svg>

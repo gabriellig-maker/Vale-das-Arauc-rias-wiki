@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" role="img" aria-labelledby="t">
+  <title id="t">Imagem provisória de peixe</title>
+  <rect x="1" y="1" width="46" height="46" fill="#f8ecd0" stroke="#b08a5a" stroke-width="2" stroke-dasharray="4 3"/>
+  <path d="M9 24 C14 14 30 13 37 24 C30 35 14 34 9 24 Z" fill="#8fb3c4" stroke="#4d6b7a" stroke-width="2"/>
+  <path d="M36 24 L44 16 L44 32 Z" fill="#8fb3c4" stroke="#4d6b7a" stroke-width="2" stroke-linejoin="round"/>
+  <rect x="14" y="21" width="4" height="4" fill="#2b3a40"/>
+  <path d="M22 18 C26 21 26 27 22 30" stroke="#4d6b7a" stroke-width="2" fill="none"/>
+</svg>

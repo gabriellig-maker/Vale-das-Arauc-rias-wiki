@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="64" viewBox="0 0 32 64" role="img" aria-labelledby="t">
+  <title id="t">Imagem provisória de plantação</title>
+  <rect x="1" y="1" width="30" height="62" fill="#f8ecd0" stroke="#b08a5a" stroke-width="2" stroke-dasharray="4 3"/>
+  <rect x="15" y="26" width="2" height="30" fill="#4f7d3c"/>
+  <path d="M16 46 C8 44 6 38 7 34 C12 35 15 40 16 46 Z" fill="#6aa04f"/>
+  <path d="M16 38 C24 36 26 30 25 26 C20 27 17 32 16 38 Z" fill="#6aa04f"/>
+  <path d="M16 28 C11 25 11 20 12 17 C16 19 17 23 16 28 Z" fill="#7fb35a"/>
+  <rect x="6" y="56" width="20" height="4" fill="#8a5a33"/>
+</svg>

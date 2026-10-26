@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="96" viewBox="0 0 160 96" role="img" aria-labelledby="t">
+  <title id="t">Imagem provisória de local</title>
+  <rect x="1" y="1" width="158" height="94" fill="#f8ecd0" stroke="#b08a5a" stroke-width="2" stroke-dasharray="4 3"/>
+  <rect x="2" y="2" width="156" height="60" fill="#d8eef6"/>
+  <path d="M2 62 H158 V94 H2 Z" fill="#8bb85a"/>
+  <path d="M40 40 L64 22 L88 40 Z" fill="#9a4a2a" stroke="#5b2b12" stroke-width="2"/>
+  <rect x="44" y="40" width="40" height="28" fill="#e8cf9c" stroke="#5b2b12" stroke-width="2"/>
+  <rect x="58" y="52" width="10" height="16" fill="#6b3f1f"/>
+  <rect x="72" y="46" width="8" height="8" fill="#9ed2ea" stroke="#5b2b12" stroke-width="1"/>
+  <rect x="117" y="34" width="4" height="34" fill="#6a3a1b"/>
+  <path d="M104 30 Q119 22 134 30 Q119 38 104 30 Z" fill="#2e5a2b"/>
+  <path d="M108 38 Q119 33 130 38 Q119 44 108 38 Z" fill="#336631"/>
+</svg>
