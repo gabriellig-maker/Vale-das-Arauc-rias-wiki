@@ -5,7 +5,7 @@ Wiki do mod **Vale das Araucárias**, que traz a cultura e a biodiversidade do S
 Aqui você encontra informações sobre peixes, plantações, árvores, receitas, personagens e outras novidades do projeto.
 
 ## 🌐 Acesse a wiki
-[Visite nossa wiki]((https://gabriellig-maker.github.io/Vale-das-Arauc-rias-wiki/)
+[Visite nossa wiki](https://gabriellig-maker.github.io/Vale-das-Arauc-rias-wiki/)
 
 ## 📚 Sobre o projeto
 Desenvolvido na disciplina **Oficina de Integração 2**, com o núcleo temático **Tecnologia, Poder e Trabalho**.
