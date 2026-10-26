@@ -1,9 +1,20 @@
-# Vale das Araucárias Wiki
+# 🌲 Wiki — Vale das Araucárias
 
-Wiki estática do mod **Vale das Araucárias** (versão 1.8.1) para Stardew Valley, com o visual da Stardew Valley Wiki:
-céu noturno ao fundo, área de conteúdo azul-clara translúcida, menu lateral e caixa de informações com moldura de madeira,
-cabeçalhos de tabela verdes e rodapé escuro. Todas as imagens do visual são próprias (SVG).
-Feita só com HTML e CSS, sem JavaScript, sem frameworks e sem subpastas. Funciona aberta direto no computador e no GitHub Pages.
+Wiki do mod **Vale das Araucárias**, que traz a cultura e a biodiversidade do Sul do Brasil para Stardew Valley.
+
+Aqui você encontra informações sobre peixes, plantações, árvores, receitas, personagens e outras novidades do projeto.
+
+## 🌐 Acesse a wiki
+[Visite nossa wiki]((https://gabriellig-maker.github.io/Vale-das-Arauc-rias-wiki/)
+
+## 📚 Sobre o projeto
+Desenvolvido na disciplina **Oficina de Integração 2**, com o núcleo temático **Tecnologia, Poder e Trabalho**.
+
+## 🛠️ Tecnologias
+HTML e CSS.
+
+🚧 Projeto em desenvolvimento, com novos conteúdos e atualizações.
+
 
 ## Arquivos
 
@@ -23,9 +34,7 @@ Todos os arquivos ficam na raiz do repositório.
 | `estilo.css` | Todo o visual do site |
 | `*.png` | Sprites reais do mod (copiados ou recortados do ZIP 1.8.1) |
 | `*.svg` | Logotipos (`logo.svg`, `logo-principal.svg`), céu noturno (`fundo-noite.svg`), moldura de madeira (`moldura.svg`), favicon, ícones e imagens provisórias |
-| `.nojekyll` | Arquivo vazio que desliga o processamento Jekyll do GitHub Pages (opcional) |
-
-## Publicar no GitHub Pages
+| `.nojekyll` | Arquivo vazio que desliga o processamento Jekyll do GitHub Pages (opcional) 
 
 
 
